@@ -1,0 +1,77 @@
+Lvl 0:
+Необходимо подключиться к хосту на bandit.labs.overthewire.org, порт 2220 и зайти за пользователя bandit0 с паролем bandit0. Сказано — сделано. Используем стандартный синтаксис команды ssh.
+:~$ ssh bandit0@bandit.labs.overthewire.org -p 2220
+
+Lvl 1:
+Пароль для перехода на следующий уровень находится в файле readme в домашней директории. Для его открытия нам понадобится команда cat.
+
+bandit0@bandit:~$ cat readme
+
+Пароль
+boJ9jbbUNNfktd78OOpsqOltutMc3MY1
+В конце каждого уровня подключаемся с помощью ssh к следующему пользователю на localhost:
+
+bandit0@bandit:~$ ssh 
+bandit1@localhost Could not create directory '/home/bandit0/.ssh'. The authenticity of host 'localhost (127.0.0.1)' can't be established. ECDSA key fingerprint is SHA256:98UL0ZWr85496EtCRkKlo20X3OPnyPSB5tB5RPbhczc. Are you sure you want to continue connecting (yes/no)? <b>yes</b> Failed to add the host to the list of known hosts (/home/bandit0/.ssh/known_hosts). This is a OverTheWire game server. More information on http://www.overthewire.org/wargames  bandit1@localhost's password: <b>Пароль</b> bandit1@bandit:~$ 
+
+Lvl 2:
+Пароль к следующему уровню хранится в файле с названием - и это единственное, чем он отличается от предыдущего. Используем ту же команду cat с небольшим изменением:
+
+bandit1@bandit:~$ cat ./-
+
+Пароль
+CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
+
+bandit1@bandit:~$ ssh bandit2@localhost
+
+Lvl 3:
+На этом уровне файл spaces in this filename, содержащий пароль, имеет в названии пробелы. С этим тоже легко справиться:
+
+bandit2@bandit:~$ cat "spaces in this filename"
+
+Пароль
+UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
+
+bandit2@bandit:~$ ssh bandit3@localhost
+
+Lvl 4:
+Пароль к следующему уровню находится в скрытом файле в директории inhere, чтобы его показать в консоли используем команду ls с опцией -a. Перейдем в директорию.
+
+bandit3@bandit:~$ cd inhere 
+bandit3@bandit:~/inhere$ ls 
+bandit3@bandit:~/inhere$ ls -a .  ..  .hidden 
+bandit3@bandit:~/inhere$ cat .hidden
+
+Пароль
+pIwrPrtPN36QITSp3EQaw936yaFoFgAB
+
+bandit3@bandit:~/inhere$ ssh bandit4@localhost
+
+Lvl 5:
+Пароль находится в единственном файле, который вы сможете прочитать (буквально), в директории inhere. Чтобы получить информацию о файле будем использовать команду file. Для начала перейдем в директорию и посмотрим, что внутри:
+
+bandit4@bandit:~$ cd inhere 
+bandit4@bandit:~/inhere$ ls -file00  -file01  -file02  -file03  -file04  -file05  -file06  -file07  -file08  -file09 
+Все файлы начинаются с -, поэтому используем синтаксис из второго уровня и дополним *, чтобы получить информацию о всех файлах сразу
+
+bandit4@bandit:~/inhere$ file ./-* ./-file00: data ./-file01: data ./-file02: data ./-file03: data ./-file04: data ./-file05: data ./-file06: data ./-file07: ASCII text ./-file08: data ./-file09: data 
+Как мы видим, единственный файл, который мы можем прочитать это -file07. Чем и займемся, используя знакомую нам команду cat.
+
+bandit4@bandit:~/inhere$ cat ./-file07
+Пароль
+koReBOKuIDDepwhWk7jZC0RTdopnAYKh
+
+bandit4@bandit:~/inhere$ ssh bandit5@localhost 
+
+Lvl 6:
+Теперь, помимо читаемости файла, нужно учесть размер в 1033 байта и факт, что файл не исполняемый. Для этого воспользуемся командой find с параметром -size 1033c. Сначала сменим директорию, конечно же, и посмотрим, что внутри.
+
+bandit5@bandit:~$ cd inhere 
+bandit5@bandit:~/inhere$ ls maybehere00  maybehere03  maybehere06  maybehere09  maybehere12  maybehere15  maybehere18 maybehere01  maybehere04  maybehere07  maybehere10  maybehere13  maybehere16  maybehere19 maybehere02  maybehere05  maybehere08  maybehere11  maybehere14  maybehere17 
+bandit5@bandit:~/inhere$ find -size 1033c ./maybehere07/.file2 bandit5@bandit:~/inhere$ cat ./maybehere07/.file2
+
+Пароль
+DXjZPULLxYr17uwoI01bNLQbtFemEgo7
+
+bandit5@bandit:~/inhere$ ssh bandit6@localhost
+Мы легко избежали блуждания по папкам командой file, это не может не радовать!
