@@ -1,3 +1,18 @@
+# OverTheWire Bandit — Write-ups
+
+Мои решения и заметки по OverTheWire Bandit (уровни 0–11 пройдены на 17 апреля 2026).
+
+**Цель уровня:** Найти пароль для следующего пользователя.
+
+Пароль: bandit0
+---
+
+### Level 0
+**Задача:** Подключиться к серверу.  
+**Команда:**  
+```bash
+ssh bandit0@bandit.labs.overthewire.org -p 2220
+
 Lvl 0:
 Необходимо подключиться к хосту на bandit.labs.overthewire.org, порт 2220 и зайти за пользователя bandit0 с паролем bandit0. Сказано — сделано. Используем стандартный синтаксис команды ssh.
 :~$ ssh bandit0@bandit.labs.overthewire.org -p 2220
