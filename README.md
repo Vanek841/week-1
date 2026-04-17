@@ -1,46 +1,50 @@
-# SOC Self-Study Journey
+# SOC Self-Study
 
-**Мой путь в кибербезопасность — Junior SOC Analyst**  
+**Мой путь в кибербезопасность — Junior SOC Analyst (Blue Team)**  
 Самообучение с нуля | Апрель 2026
 
-Я самостоятельно изучаю **Blue Team** (SOC L1), чтобы через 1.5–2 года выйти на позицию Junior SOC Analyst / Аналитик событий ИБ на удалёнке.
+Я самостоятельно изучаю информационную безопасность с целью выйти на позицию **Junior SOC Analyst** через 1.5–2 года.
 
-### Текущий прогресс (Неделя 1)
+### Текущий прогресс
 
 - **OverTheWire Bandit** — пройдено **15 уровней** (из 33)
 - Anki — веду карточки по Linux-командам
 - TryHackMe — настроен OpenVPN, начал Linux Fundamentals
-- GitHub — веду ежедневные заметки по обучению
+- Изучаю основы сетей (Professor Messer Network+ N10-009)
 
-**Цель этой недели:** Закончить Bandit минимум до уровня 20–25 + начать основы сетей.
+**Цель на ближайшую неделю:** Закончить Bandit до уровня 20–25 и продолжить Linux Fundamentals на TryHackMe.
 
-### Что я уже освоил в Bandit
+### Что я уже освоил
 
-- Базовая работа с терминалом (`ls`, `cd`, `cat`, `pwd`)
-- Работа с "неудобными" файлами (пробелы в имени, файлы начинающиеся на `-`)
-- Скрытые файлы (`ls -a`)
-- Поиск файлов (`find`) по пользователю, группе и размеру
-- `grep`, `sort | uniq -u`, `strings`, `base64 -d`
-- Перенаправление вывода и подавление ошибок (`2>/dev/null`)
+- Уверенная работа в Linux-терминале
+- Поиск и работа с "неудобными" файлами (`find`, `grep`, `strings`)
+- Работа с архивами и бинарными данными (уровень 12)
+- SSH-ключи, `scp`, `nc` (netcat)
+- Базовые сетевые концепции
 
-Подробные решения и заметки по уровням находятся в файле `bandit.labs`
+### Структура обучения
 
-### План обучения
+**Неделя 1–2:** Linux Command Line (OverTheWire Bandit)  
+**Неделя 3–4:** Основы сетей (Network+) + TryHackMe Pre Security  
+**Далее:** Python для анализа логов → SIEM (Wazuh) → Triage инцидентов
 
-**Неделя 1–2** — Linux Command Line (Bandit + TryHackMe Linux Fundamentals)  
-**Неделя 3–4** — Основы сетей (Professor Messer Network+ N10-009)  
-**Далее** — Python для анализа логов, SIEM (Wazuh), triage инцидентов
+### Подробные write-ups
+
+- [OverTheWire Bandit — решения и заметки](./bandit.labs)
 
 ### Следующие шаги
 
 - Завершить OverTheWire Bandit
-- TryHackMe Pre Security path
-- Professor Messer — Network+ (OSI Model, TCP/IP, Common Ports)
-- Настройка домашней лаборатории
+- TryHackMe: Linux Fundamentals + Pre Security path
+- Professor Messer: Network+ (OSI Model, TCP/IP, Common Ports)
+- Начать настройку домашней SIEM-лаборатории
 
 ---
 
-**Обновляется почти каждый день**  
+**Обновляется регулярно**  
 Начало обучения: 15 апреля 2026
 
-Если хочешь посмотреть мои заметки по Bandit — смотри файл `bandit.labs`
+---
+
+### Контакты / Социальные сети
+- GitHub: [@Vanek841](https://github.com/Vanek841)
