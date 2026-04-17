@@ -1,2 +1,46 @@
-# week-1
-first week of SOC-analist training
+# SOC Self-Study Journey
+
+**Мой путь в кибербезопасность — Junior SOC Analyst**  
+Самообучение с нуля | Апрель 2026
+
+Я самостоятельно изучаю **Blue Team** (SOC L1), чтобы через 1.5–2 года выйти на позицию Junior SOC Analyst / Аналитик событий ИБ на удалёнке.
+
+### Текущий прогресс (Неделя 1)
+
+- **OverTheWire Bandit** — пройдено **15 уровней** (из 33)
+- Anki — веду карточки по Linux-командам
+- TryHackMe — настроен OpenVPN, начал Linux Fundamentals
+- GitHub — веду ежедневные заметки по обучению
+
+**Цель этой недели:** Закончить Bandit минимум до уровня 20–25 + начать основы сетей.
+
+### Что я уже освоил в Bandit
+
+- Базовая работа с терминалом (`ls`, `cd`, `cat`, `pwd`)
+- Работа с "неудобными" файлами (пробелы в имени, файлы начинающиеся на `-`)
+- Скрытые файлы (`ls -a`)
+- Поиск файлов (`find`) по пользователю, группе и размеру
+- `grep`, `sort | uniq -u`, `strings`, `base64 -d`
+- Перенаправление вывода и подавление ошибок (`2>/dev/null`)
+
+Подробные решения и заметки по уровням находятся в файле `bandit.labs`
+
+### План обучения
+
+**Неделя 1–2** — Linux Command Line (Bandit + TryHackMe Linux Fundamentals)  
+**Неделя 3–4** — Основы сетей (Professor Messer Network+ N10-009)  
+**Далее** — Python для анализа логов, SIEM (Wazuh), triage инцидентов
+
+### Следующие шаги
+
+- Завершить OverTheWire Bandit
+- TryHackMe Pre Security path
+- Professor Messer — Network+ (OSI Model, TCP/IP, Common Ports)
+- Настройка домашней лаборатории
+
+---
+
+**Обновляется почти каждый день**  
+Начало обучения: 15 апреля 2026
+
+Если хочешь посмотреть мои заметки по Bandit — смотри файл `bandit.labs`
